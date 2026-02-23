@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Share to Nostr",
+  "version": "0.1.0",
+  "description": "Share selected text, images, or pages to Nostr with a preview-first flow.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["contextMenus", "storage", "tabs", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Share to Nostr",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  }
+}

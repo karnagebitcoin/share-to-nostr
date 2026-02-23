@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compose Nostr Post</title>
+    <link rel="stylesheet" href="compose.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+
+    <main class="layout">
+      <section class="panel preview">
+        <div class="panel-title-wrap">
+          <p class="eyebrow">Preview</p>
+          <h1>Review Before Publishing</h1>
+        </div>
+
+        <article class="preview-card">
+          <p id="previewType" class="type-pill">Draft</p>
+          <p id="previewContent" class="preview-content empty">Start writing your post...</p>
+          <div id="previewImageWrap" class="image-wrap hidden">
+            <img id="previewImage" alt="Image preview" />
+          </div>
+          <div id="previewVideoWrap" class="media-wrap hidden">
+            <video id="previewVideo" controls playsinline preload="metadata"></video>
+          </div>
+          <a id="previewUrl" class="source-link hidden" target="_blank" rel="noreferrer">Source</a>
+        </article>
+
+        <section class="source-info" id="sourceInfo">
+          <p class="info-label">Source Context</p>
+          <p id="sourceTitle" class="source-title">No specific source.</p>
+          <p id="sourceMeta" class="source-meta">Manual post</p>
+        </section>
+      </section>
+
+      <section class="panel composer">
+        <div class="panel-title-wrap">
+          <p class="eyebrow">Composer</p>
+          <h2>What should be posted?</h2>
+        </div>
+
+        <label class="field" for="contentInput">
+          <span>Post Content</span>
+          <textarea
+            id="contentInput"
+            rows="8"
+            placeholder="Write your Nostr post."
+            maxlength="5000"
+          ></textarea>
+          <span id="contentCount" class="muted">0 characters</span>
+        </label>
+
+        <label class="field" for="mediaInput">
+          <span>Media URL (image/video, optional)</span>
+          <input id="mediaInput" type="url" placeholder="https://example.com/image.jpg or https://example.com/video.mp4" />
+        </label>
+
+        <label class="field" for="sourceInput">
+          <span>Source URL (optional)</span>
+          <input id="sourceInput" type="url" placeholder="https://example.com/article" />
+        </label>
+
+        <label class="field" for="relaysInput">
+          <span>Relays (one per line)</span>
+          <textarea
+            id="relaysInput"
+            rows="3"
+            placeholder="wss://relay.damus.io\nwss://relay.primal.net"
+          ></textarea>
+        </label>
+
+        <section class="signer-row">
+          <div>
+            <p class="signer-label">Signer</p>
+            <p class="signer-value">Browser signer (NIP-07)</p>
+          </div>
+          <button id="checkSignerButton" class="subtle-btn" type="button">Check Signer</button>
+        </section>
+
+        <section id="signerStatus" class="status neutral">Checking signer status is recommended before publishing.</section>
+
+        <div class="actions">
+          <button id="publishButton" class="primary" type="button">Publish to Nostr</button>
+          <button id="clearDraftButton" class="ghost" type="button">Clear Draft</button>
+        </div>
+
+        <section id="publishResult" class="result hidden" aria-live="polite"></section>
+      </section>
+    </main>
+
+    <script src="compose.js" type="module"></script>
+  </body>
+</html>

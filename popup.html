@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share to Nostr</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <p class="kicker">Share to Nostr</p>
+        <h1>Post in seconds</h1>
+        <p class="subtle">Preview first, sign with your browser signer, then publish to relays.</p>
+      </header>
+
+      <section class="page-preview" id="pagePreview">
+        <p class="label">Current Page</p>
+        <h2 id="pageTitle">Loading...</h2>
+        <p id="pageUrl" class="url">Looking up active tab.</p>
+      </section>
+
+      <button id="sharePageButton" class="primary">Share This Page</button>
+      <button id="openComposeButton" class="ghost">Open Empty Composer</button>
+
+      <section class="settings">
+        <label class="toggle-row" for="includeSourceToggle">
+          <input id="includeSourceToggle" type="checkbox" />
+          <span>Include source URL for text/image/video shares</span>
+        </label>
+        <p class="setting-note">When off, right-click text/image/video shares will not auto-attach the page URL.</p>
+      </section>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
