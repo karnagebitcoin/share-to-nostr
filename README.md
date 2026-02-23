@@ -18,12 +18,7 @@ A Manifest V3 extension for sharing selected text, images, and full pages to Nos
 1. Open Chrome and go to `chrome://extensions`.
 2. Enable **Developer mode**.
 3. Click **Load unpacked**.
-4. Select this folder: `/Users/k/code/sharetonostr`.
-5. Put extension icons in `/Users/k/code/sharetonostr/icons` with these exact names:
-   - `icon16.png`
-   - `icon32.png`
-   - `icon48.png`
-   - `icon128.png`
+4. Select this folder: `sharetonostr`.
 
 ## Notes on authentication
 
